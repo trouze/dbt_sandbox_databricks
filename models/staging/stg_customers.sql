@@ -7,7 +7,8 @@ renamed as (
         ID as customer_id,
         NAME as name,
         SIGNUP_DATE as signup_date,
-        LOAD_DTS as load_dts
+        LOAD_DTS as load_dts,
+        current_timestamp() as last_model_run
     from source
 )
 select * from renamed

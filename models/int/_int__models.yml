@@ -10,9 +10,6 @@ models:
           time_part: hour
   - name: dim_customers
     description: ""
-    config:
-      group: customers_group
-      access: public
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
