@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: TROUZEDB
+    database: trouze
     schema: raw
     tables:
       - name: raw_customers
