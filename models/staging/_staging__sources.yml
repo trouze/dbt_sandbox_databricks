@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: jshop
+    database: TROUZE_DB
+    schema: JAFFLE_SHOP
+    tables:
+      - name: customers
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+        loaded_at_field: "cast(LOAD_DTS as TIMESTAMP)"
+      - name: orders
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+        loaded_at_field: "cast(LOAD_DTS as TIMESTAMP)"
+      - name: payments
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+        loaded_at_field: "cast(LOAD_DTS as TIMESTAMP)"

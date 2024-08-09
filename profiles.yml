@@ -1,0 +1,24 @@
+a8snowflake:
+  outputs:
+    ci:
+      account: "{{ env_var('ACCOUNT') }}"
+      database: "{{ env_var('DATABASE') }}"
+      password: "{{ env_var('SF_PASSWORD') }}"
+      role: "{{ env_var('ROLE') }}"
+      schema: "{{ env_var('SCHEMA') }}"
+      threads: 1
+      type: snowflake
+      user: "{{ env_var('SF_USERNAME') }}"
+      warehouse: "{{ env_var('WAREHOUSE') }}"
+    dev:
+      account: "{{ env_var('ACCOUNT') }}"
+      database: "{{ env_var('DATABASE') }}"
+      password: "{{ env_var('SF_PASSWORD') }}"
+      role: "{{ env_var('ROLE') }}"
+      schema: "{{ env_var('SCHEMA') }}"
+      threads: 1
+      type: snowflake
+      user: "{{ env_var('SF_USERNAME') }}"
+      warehouse: "{{ env_var('WAREHOUSE') }}"
+  target: dev
+

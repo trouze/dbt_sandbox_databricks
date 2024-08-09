@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: ""
+    tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 1
+          time_part: minute
+  - name: stg_orders
+    description: ""
+    tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour
+  - name: stg_payments
+    description: ""
+    tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour
+    
