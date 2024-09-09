@@ -1,3 +1,8 @@
+{{ config(
+  persist_docs={"relation": true, "columns": true},
+  materialized='table'
+) }}
+
 with c as (
     select * from {{ ref('dim_customers') }}
 ),
@@ -18,6 +23,3 @@ final as (
     group by c.customer_id, c.name
 )
 select * from final
-{% if target.name == 'ci' %}
-    limit 10
-{% endif %}

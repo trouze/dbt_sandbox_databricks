@@ -42,7 +42,7 @@ models:
       +materialized: table
       +schema: jaffle_staging
     int:
-      +materialized: view
+      +materialized: table
       +schema: jaffle_int
     marts:
       +materialized: table
