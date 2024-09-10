@@ -15,11 +15,13 @@ models:
           - not_null
       - name: first_name
         description: "test desc"
-      - name: last_initial
+      - name: first_order_date
         description: "test desc"
-      - name: max_order_date
+      - name: last_order_date
         description: "test desc"
-      - name: min_order_date
+      - name: num_orders
+        description: "test desc"
+      - name: last_model_run
         description: "test desc"
 
 exposures:

@@ -1,8 +1,3 @@
-{{ config(
-  persist_docs={"relation": true, "columns": true},
-  materialized='table'
-) }}
-
 with c as (
     select * from {{ ref('dim_customers') }}
 ),
