@@ -12,7 +12,7 @@ o as (
 final as (
     select
         c.customer_id as customer_id,
-        c.name as name,
+        c.name as first_name,
         min(o.order_timestamp) as first_order_date,
         max(o.order_timestamp) as last_order_date,
         count(o.order_timestamp) as num_orders,
