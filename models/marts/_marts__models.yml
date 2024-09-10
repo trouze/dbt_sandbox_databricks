@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: orders_by_customer
-    description: ""
+    description: "test desc updated"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
@@ -10,12 +10,17 @@ models:
           time_part: hour
     columns:
       - name: customer_id
+        description: "test desc"
         data_tests:
           - not_null
       - name: first_name
+        description: "test desc"
       - name: last_initial
+        description: "test desc"
       - name: max_order_date
+        description: "test desc"
       - name: min_order_date
+        description: "test desc"
 
 exposures:
   - name: jaffle_order_metrics

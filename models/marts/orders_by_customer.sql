@@ -1,3 +1,8 @@
+{{ config(
+  persist_docs={"relation": true, "columns": true},
+  materialized='table'
+) }}
+
 with c as (
     select * from {{ ref('dim_customers') }}
 ),
@@ -7,7 +12,7 @@ o as (
 final as (
     select
         c.customer_id as customer_id,
-        c.name as name,
+        c.name as first_name,
         min(o.order_timestamp) as first_order_date,
         max(o.order_timestamp) as last_order_date,
         count(o.order_timestamp) as num_orders,
@@ -18,6 +23,3 @@ final as (
     group by c.customer_id, c.name
 )
 select * from final
-{% if target.name == 'ci' %}
-    limit 10
-{% endif %}

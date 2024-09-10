@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_customers
-    description: ""
+    description: "test"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
@@ -23,35 +23,35 @@ models:
       - name: signup_date
         data_type: text
   - name: stg_orders
-    description: ""
+    description: "test"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
   - name: stg_items
-    description: ""
+    description: "test"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
   - name: stg_products
-    description: ""
+    description: "test"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
   - name: stg_stores
-    description: ""
+    description: "test"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
   - name: stg_supplies
-    description: ""
+    description: "test"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
