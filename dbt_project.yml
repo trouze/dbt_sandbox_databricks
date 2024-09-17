@@ -36,10 +36,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
+  +persist_docs:
+    relation: "{{ env_var('DBT_PERSIST_RELATION_DOCS', 'false') }}"
+    columns: "{{ env_var('DBT_PERSIST_COLUMN_DOCS', 'false') }}"
   dbt_sandbox:
     # Config indicated by + and applies to all files under models/example/
     staging:
-      +materialized: table
+      +materialized: view
       +schema: jaffle_staging
     int:
       +materialized: table
