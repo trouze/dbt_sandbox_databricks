@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_customers
-    description: "test change new new"
+    description: "test change desc"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
@@ -10,7 +10,7 @@ models:
           time_part: minute
     columns:
       - name: customer_id
-        description: "test col desc"
+        description: "test col description"
         data_type: text
         data_tests:
           - anot_null
