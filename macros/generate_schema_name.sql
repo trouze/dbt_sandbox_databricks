@@ -1,27 +1,14 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
 
     {%- set default_schema = target.schema -%}
-    {%- set target_name = target.name -%}
-    {%- if target_name == 'ci' -%}
-        {%- if custom_schema_name is none -%}
+    {%- if custom_schema_name is none -%}
 
-            ci_{{ default_schema }}
-            
-        {%- else -%}
+        {{ default_schema }}
 
-            ci_{{ custom_schema_name | trim }}
-
-        {%- endif -%}
     {%- else -%}
-        {%- if custom_schema_name is none -%}
 
-            {{ default_schema }}
-            
-        {%- else -%}
+        {{ default_schema }}_{{ custom_schema_name | trim }}
 
-            {{ custom_schema_name | trim }}
-
-        {%- endif -%}
     {%- endif -%}
 
 {%- endmacro %}
